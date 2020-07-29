@@ -86,10 +86,13 @@ body {
   display: grid;
   grid-column: 2 / 3;
   grid-row: 3;
+  justify-self: center;
   vertical-align: bottom;
+  text-align: center;
   justify-content: center;
   align-items: flex-end;
   color: rgb(88, 88, 88);
+
 }
 
 .inputarea {
@@ -127,6 +130,16 @@ body {
 }
 
 #file_upload {
+  grid-column: 1;
+  grid-row: 1;
+  display: grid;
+  vertical-align: top;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+#clear{
   grid-column: 1;
   grid-row: 1;
   display: grid;

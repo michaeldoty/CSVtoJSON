@@ -15,7 +15,7 @@
     </header>
     <p class='subtitle'><span>CONVERTER AND DOWNLOADER</span></p>
     <!-- INPUT DATA AND FILES -->
-    <label class='label' for="data">PASTE YOU JSON DATA BELOW</label>
+    <label class='label' for="data"><span>PASTE YOU JSON DATA BELOW <b>||</b> <br> UPLOAD YOUR JSON FILE</span></label>
     <form class='inputform' method="POST" action="/json_to_csv">
       <textarea class='inputarea' id="inputbox" name="form_data" rows="13" cols="50">
       </textarea>
@@ -33,6 +33,7 @@
       <textarea class='resultarea' id="resultbox" name="result_data" rows="13" cols="50">
       </textarea>
       <div class='form_buttons'>
+        <button id='clear'>CLEAR ALL</button>
         <button id='download' type="submit">DOWNLOAD</button>
       </div>
     </form>

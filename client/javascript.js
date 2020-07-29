@@ -7,25 +7,9 @@ $(document).ready(function() {
     console.log('submit data button clicked');
 
     var JSONData = ($('#inputbox').val())
-    var JSONCSV = ('this is def not right!!' + JSON.stringify(JSONData));
-    console.log(JSONCSV);
-    // var json = JSONData.employee
-    // var headers = [];
-    // for (var key of json) {
-    // }
-    // var fields = Object.keys(json[0])
-    // var replacer = function(key, value) {
-    //   return value === null ? '' : value
-    // }
-    // var csv = json.map(function(row){
-    //   return fields.map(function(fieldName){
-    //     return JSON.stringify(row[fieldName], replacer)
-    //   }).join(',')
-    // })
-    // csv.unshift(fields.join(','))
-    // csv = csv.join('\r\n');
+    var JSONCSV = ('this is def not right!!' + JSONData);
 
-    $.ajax({
+     $.ajax({
       type: 'POST',
       url: '/json_to_csv',
       data: JSONCSV,
@@ -40,7 +24,7 @@ $(document).ready(function() {
 
   $('#file_upload').click(function(e) {
     e.preventDefault();
-    const formData = new FormData();
+    let formData = new FormData();
     var files = $('#inpFile')[0].files[0];
     formData.append('file', files);
 
@@ -51,7 +35,9 @@ $(document).ready(function() {
       processData: false,
       contentType: false,
       success: function(data) {
-        $('#resultbox').html(data);
+        $('#inputbox').html(data);
+        $('#inpFile').val('');
+
       }
     })
 });
@@ -81,5 +67,11 @@ function saveTextAsFile(textToWrite, fileNameToSaveAs)
 
     downloadLink.click();
   }
+
+  $('#clear').click(function(e) {
+    e.preventDefault();
+    $('#inputbox').html("");
+    $('#resultbox').html("");
+  });
 
 })
