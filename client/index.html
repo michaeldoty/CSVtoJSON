@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script type='text/javascript' src="./javascript.js"></script>
   <link rel="stylesheet" type='text/css' href='./styles/style.css'>
   <title>JSON to CSV</title>
 </head>
@@ -13,13 +14,18 @@
       <h1 class="title"><span>CSV to JSON</span></h1>
     </header>
     <p class='subtitle'><span>CONVERTER AND DOWNLOADER</span></p>
+    <!-- INPUT DATA AND FILES -->
     <label class='label' for="data">PASTE YOU JSON DATA BELOW</label>
     <form class='inputform' method="POST" action="/json_to_csv">
-      <textarea class='inputarea' id="textbox" name="form_data" rows="13" cols="50">
+      <textarea class='inputarea' id="inputbox" name="form_data" rows="13" cols="50">
       </textarea>
       <div class='form_buttons'>
-        <button id='form_select' type="select">SELECT FILE</button>
-        <button id='form_submit' type="submit">SUBMIT DATA</button>
+
+          <button id='file_upload' type="select">UPLOAD</button>
+          <input type="file" name='json_file' id="inpFile">
+
+          <button id='form_submit' type="submit">SUBMIT DATA</button>
+
       </div>
     </form>
     <label class='label results' for="data">YOUR CONVERTED DATA IS BELOW</label>
@@ -27,11 +33,9 @@
       <textarea class='resultarea' id="resultbox" name="result_data" rows="13" cols="50">
       </textarea>
       <div class='form_buttons'>
-        <button id='form_submit' type="submit">DOWNLOAD</button>
+        <button id='download' type="submit">DOWNLOAD</button>
       </div>
     </form>
-
   </container>
-
 </body>
 </html>
